@@ -49,12 +49,17 @@
 트리 기반 앙상블과 신경망(TabNet)을 결합한 하이브리드 구조를 채택하였습니다.
 
 ### 모델별 성능 대비 (Numerical Scorecard)
+![Model Performance Report](model_performance_report.png)
+
 | 모델 유형 | R2 Score | MAE (원/㎡) | MAPE (%) |
 | :--- | :---: | :---: | :---: |
 | **XGBoost (Tuned)** | **0.8701** | 463,073 | 38.27 |
 | **LightGBM (Tuned)** | 0.8691 | 467,666 | 38.61 |
 | **CatBoost (Tuned)** | 0.8637 | 478,144 | 39.21 |
 | **Ensemble (R2-Weighted)** | 0.8676 | **463,412** | **36.95** |
+
+### 성능 지표 상세 히트맵
+![Performance Heatmap](performance_heatmap.png)
 
 *   **앙상블 전략**: 개별 모델의 예측값에 R2 성능 기반 가중치를 부여하여 스택킹 앙상블을 구현함으로써 오차율(MAPE)을 단일 모델 대비 1.3%p 추가 개선하였습니다.
 
